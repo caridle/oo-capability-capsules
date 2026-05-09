@@ -42,16 +42,16 @@
 
 以下图表代码可直接复制到 https://plantuml.com 渲染：
 
-- [Use Case 图](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/use-case.puml)
-- [领域模型图](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/domain-model.puml)
-- [完整 Class Diagram](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/class-diagram.puml)
-- [Sequence: 主动选择](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/sequence-select.puml)
-- [Sequence: 确认锁死](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/sequence-confirm.puml)
-- [Sequence: 解封](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/sequence-unseal.puml)
-- [State: User状态机](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/state-user.puml)
-- [Activity: 主动选择泳道图](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/activity-select.puml)
-- [Component: 系统组件图](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/component.puml)
-- [ER: 数据库设计](https://github.com/caridle/oo-capability-capsules/blob/main/examples/yuanshi/diagrams/er-diagram.puml)
+- [Use Case 图](diagrams/use-case.puml)
+- [领域模型图](diagrams/domain-model.puml)
+- [完整 Class Diagram](diagrams/class-diagram.puml)
+- [Sequence: 主动选择](diagrams/sequence-select.puml)
+- [Sequence: 确认锁死](diagrams/sequence-confirm.puml)
+- [Sequence: 解封](diagrams/sequence-unseal.puml)
+- [State: User状态机](diagrams/state-user.puml)
+- [Activity: 主动选择泳道图](diagrams/activity-select.puml)
+- [Component: 系统组件图](diagrams/component.puml)
+- [ER: 数据库设计](diagrams/er-diagram.puml)
 
 ## 产出文档
 
