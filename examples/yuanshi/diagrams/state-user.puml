@@ -1,0 +1,16 @@
+@startuml
+[*] --> ACTIVE : 注册+实名通过
+state ACTIVE {
+  [*] --> BROWSING
+  BROWSING --> SELECTING : 发起选择
+}
+ACTIVE --> LOCKED : 双方确认 [bothConfirmed()]
+ACTIVE --> BANNED : 违规3次举报
+LOCKED --> ACTIVE : 付费解封 [paymentSuccess()]
+LOCKED --> BANNED : 严重违规
+BANNED --> [*]
+note right of LOCKED
+  entry / removeFromPool()
+  exit / addToPool()
+end note
+@enduml

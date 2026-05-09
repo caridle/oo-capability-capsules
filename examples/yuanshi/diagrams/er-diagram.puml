@@ -1,0 +1,39 @@
+@startuml
+entity users {
+  * user_id : UUID <<PK>>
+  * real_name : VARCHAR(50)
+  * id_card : VARCHAR(18) <<UK>>
+  * status : ENUM
+  * balance : DECIMAL(10,2)
+}
+entity match_selections {
+  * selection_id : UUID <<PK>>
+  * selector_id : UUID <<FK>>
+  * selected_id : UUID <<FK>>
+  * paid_amount : DECIMAL(10,2)
+  * status : ENUM
+}
+entity payment_orders {
+  * order_id : UUID <<PK>>
+  * type : ENUM
+  * amount : DECIMAL(10,2)
+  * status : ENUM
+}
+entity conversations {
+  * conv_id : UUID <<PK>>
+  * participant_1 : UUID <<FK>>
+  * participant_2 : UUID <<FK>>
+  * expires_at : TIMESTAMP
+}
+entity relationships {
+  * rel_id : UUID <<PK>>
+  * user_id_1 : UUID <<FK>>
+  * user_id_2 : UUID <<FK>>
+  * status : ENUM
+}
+users ||--o{ match_selections : selects
+users ||--o{ match_selections : selected_by
+match_selections ||--|| payment_orders
+match_selections ||--|| conversations
+conversations ||--o| relationships
+@enduml

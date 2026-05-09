@@ -1,0 +1,30 @@
+@startuml
+class User <<Aggregate Root>> {
+  - userId: UserId
+  - realName: String
+  - gender: Gender
+  - status: UserStatus
+  - balance: Money
+}
+class Profile <<Entity>> { - height: Int - education: Education - income: IncomeRange }
+class IdentityVerification <<Entity>> { - livenessScore: Float - verifiedAt: DateTime }
+class MatchPreference <<VO>> { + ageMin: Int + values: List<String> }
+class MatchSelection <<Aggregate Root>> { - paidAmount: Money - status: SelectionStatus }
+class PaymentOrder <<Entity>> { - type: OrderType - amount: Money - status: PaymentStatus }
+class Conversation <<Aggregate Root>> { - expiresAt: DateTime - status: ConversationStatus }
+class Message <<Entity>> { - content: String - sentAt: DateTime }
+class Relationship <<Entity>> { - confirmedAt: DateTime - dissolvedAt: DateTime }
+class Money <<VO>> { + amount: BigDecimal + currency: String }
+enum UserStatus { ACTIVE, LOCKED, BANNED }
+enum OrderType { SELECT, UNSEAL }
+
+User "1" *-- "1" Profile
+User "1" *-- "1" IdentityVerification
+User "1" *-- "1" MatchPreference
+User "1" -- "*" MatchSelection : selects
+User "1" -- "*" MatchSelection : selected
+MatchSelection "1" -- "1" PaymentOrder
+MatchSelection "1" -- "1" Conversation
+Conversation "1" *-- "*" Message
+Conversation "1" -- "1" Relationship
+@enduml
